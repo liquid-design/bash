@@ -18,7 +18,7 @@ echo $selected
 echo
 echo
 case $selected in
-	1) ./script1.sh;;
+	1) ./name-input-validation.sh;;
 	2) ./script2.sh;;
 	3) ./script3.sh;;
 	*) echo "please enter a value"
