@@ -1,0 +1,35 @@
+#!/bin/bash
+# Stored Regular Expressions
+
+reg_mac='echo [0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}'
+grep_mac='grep -E `reg_mac`'
+reg_email='echo "[^[:space:]]+@[^[:space:]]+"'
+reg_ip='echo "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"'
+
+#!/bin/bash
+# $1, $2, $0
+
+var='Hello World!, $0'
+var2="Hello World!, $0"
+
+# print: Hello World!, $0
+echo $var
+# print: Hello World!, ./your-scriptname.sh
+echo $var2 
+
+# notice the double "" and single ''
+value="The ip adress of this machine is: 'ifconfig | grep Bcast | awk {'print $2'}'"
+
+
+#!/bin/bash
+
+# The command substitution can be done in two ways one is using $(…) and the other is `…`. Both work same, but the $(…) form is the modern way and has more clarity and readability
+
+# http://mywiki.wooledge.org/BashFAQ/082
+
+# backtick
+file `which hostname`
+chown `id -u` /somedir
+
+# command substitution can even nest itself
+listing=$(ls -l $(cat filenames.txt))
