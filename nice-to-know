@@ -40,3 +40,9 @@ listing=$(ls -l $(cat filenames.txt))
 # the ternairy operator is available :)
 # (( result = is_true ? use-if-true : use-if-false ))
 if (( bit = volt > 3 ? 1 : 0 )) # assign 1 to variable bit if true. Else assign 0 to variable bit
+
+
+------------------
+help on signal levels
+type in your terminal: man 7 signal 
+
