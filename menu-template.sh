@@ -1,6 +1,34 @@
 #!/bin/bash
-clear
+# simple menu by selection
+select var in A B C D
+do
 
+	echo "you have selected $var"
+
+done
+
+#!/bin/bash
+# menu by selection while using case
+select var in A B C D
+do
+	case $var in
+		A)
+			# Somehow the ;; to end the case is important
+			echo "you have selected A";;
+		B)
+			echo "you have selected B";;
+		C)
+			echo "you have selected C";;
+		D)
+			echo "you have selected D";;
+		# escaping from invalid selection	
+		*)
+			echo "You have to select A..D";;
+	esac
+done
+
+#!/bin/bash
+# invoke other scripts with selection
 echo
 echo
 echo "This is a way to learn bash"
