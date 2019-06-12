@@ -1,0 +1,49 @@
+# check directory
+read dir
+
+if [ -d "$dir" ]
+then
+	echo "Directory Exist"
+else
+	echo "Directory does not exist"
+fi
+
+# check filename
+read file
+
+if [[ -f "$file" ]]
+then
+	echo "File Exist"
+else
+	echo "File does not exist"
+fi
+
+# append to filename
+echo "enter filename to append"
+read file
+
+if [[ -f "$file" ]]
+then
+	echo "Enter the text to append"
+	read filetext
+	echo "$filetext" >> $file
+else
+	echo "$file File does not exist"
+fi
+
+
+# reading from the filen
+echo "enter filename from which you want to read"
+read file
+
+if [[ -f "$file" ]]
+then
+	while IFS= read -r line
+	do
+		echo "$line"
+		done < $file
+else
+	echo "$file File does not exist"
+fi
+
+
